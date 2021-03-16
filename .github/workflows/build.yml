@@ -26,4 +26,9 @@ jobs:
       - name: create .ssh/known_hosts
         run: |
           ssh-keyscan -H -t rsa -v 158.101.167.157  >> ~/.ssh/known_hosts
+      - name: copy binaries to oravm
+        run: |
+          echo "Hallo ich bin hier"
+          ls -l target/
+          scp target/actions-demo-1.0.0-SNAPSHOT.jar oravm:
 
