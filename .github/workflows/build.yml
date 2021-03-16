@@ -20,10 +20,10 @@ jobs:
       - name: Build
         run: ./mvnw verify -B
       - name: install ssh key
-          uses: webfactory/ssh-agent@v0.4.1
-          with:
-            ssh-private-key: ${{ secrets.ORAVM }}
-              - name: create .ssh/known_hosts
-                run: |
-                  ssh-keyscan -H -t rsa -v 158.101.167.157  >> ~/.ssh/known_hosts
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.ORAVM }}
+      - name: create .ssh/known_hosts
+        run: |
+          ssh-keyscan -H -t rsa -v 158.101.167.157  >> ~/.ssh/known_hosts
 
